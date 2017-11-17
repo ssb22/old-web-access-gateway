@@ -1,0 +1,1174 @@
+<HTML>
+<HEAD>
+<TITLE>Web Access Gateway: Online Help</TITLE>
+<USE ssb22head></HEAD>
+<!-- The BODY tag must be exactly as follows (the line is strcmp'd) -->
+<BODY>
+<USE ssb22AfterBody>
+<USE ssb22navigator>
+<CENTER><H1>Web Access Gateway: Online Help</H1></CENTER>
+
+Welcome to the Web access gateway.&nbsp; This is the online help
+          file; it is not the same as the gateway's home
+          page, which is at <A
+          HREF="http://www.cl.cam.ac.uk/~ssb22/access.html">www.cl.cam.ac.uk/~ssb22/access.html</A>.
+
+<P>This gateway currently
+          has two related purposes:
+
+<P>1.&nbsp; To make the Web easier to access for the visually impaired;
+<BR>2.&nbsp; To allow speakers of other languages to view Web pages written
+in them, when the encodings are not supported by their browsers.
+
+<P>For help on a particular option, jump straight to the <A
+		HREF="#options_list">options list</A>.
+There is also a <A HREF="#common_problems">common problems</A> section.
+
+<P>Users of earlier versions may like to note that the language translation
+facility has been removed due to inadequacies; also the ``Leave smileys
+etc as they are'' option has been replaced by ``Perform smiley substitution''
+(ie. substitution is now off by default), because it is slow for large
+Web pages and you should only enable it if you really want it.
+
+<P>A description of the gateway follows.
+<H3>
+The Internet and the World Wide Web</H3>
+Briefly, the Internet is a continuously changing global network of links
+between computers, arranged in such a way that any two computers connected
+to it may communicate with each other.&nbsp; The World Wide Web is an arrangement
+that allows some of these computers to store documents, which may be viewed
+from other computers on the Internet.
+
+<P>Most of the documents on the World Wide Web are written in Hypertext
+Markup Language (HTML).&nbsp; HTML allows links to other documents to be
+embedded within a document.&nbsp; Should a link be selected, an attempt
+will be made to fetch and display the second document.&nbsp; This may be
+stored on a completely different computer.&nbsp; Hence, the whole thing
+can become a world wide ``web'' of documents and links between documents.
+
+<P>The documents that you view on the World Wide Web may not have been
+stored on any computer.&nbsp; Instead, they may have been generated, by
+a computer program running on that computer, especially for your request.&nbsp;
+As the user, you may know little difference between a program retrieving
+the document from storage and a program generating it.
+
+<P>Programs that generate documents can be given parameters.&nbsp; This
+will usually involve you filling in some kind of ``form'' and ``submitting''
+it.&nbsp; The computer that your computer is communicating with will then
+be told what you have put in the form, and it can use this information
+while generating the document that it returns as a result (the remote computer
+can also store the information if necessary).
+
+<P>It is also possible to embed parameters in a link, to be put in a document.&nbsp;
+Thus, if you as user were to activate the link, it would be as though you
+had filled in a form with those parameters.
+<BR>&nbsp;
+<H3>
+``Hijacking'' the Web</H3>
+Given the above, it is possible to ``hijack'' somebody's session on the World
+Wide Web.&nbsp; Suppose that computer 1 wants to view a document stored
+on computer 2.&nbsp; Rather than ask computer 2 for the document, suppose
+that it asks computer 3 instead.&nbsp; The nature of the request includes
+exactly where the document is to be found, on computer 2.&nbsp; A program
+is activated on computer 3, which gets the document from computer 2, and
+returns it to computer 1.&nbsp; However, before returning it, it can change
+all of the links in the document to point to computer 3.&nbsp; Therefore,
+when any of these links are followed, a similar process will happen, and
+so on - in effect, computer 3 has become a ``gateway'' to the World Wide
+Web for computer 1, arbitrating between computer 1 and the rest of the
+world.
+<BR>&nbsp;
+<H3>
+Access Gateway</H3>
+There may seem little point in the above arrangement, but the ``gateway''
+computer, rather than just retrieving the documents that it is told to
+retrieve, can do something useful with them before it returns them.&nbsp;
+For example, it can process some of the markup language in order to make
+the document easier to read for visually disabled people.&nbsp; It is possible
+to configure exactly what is done, since no two people are alike (this
+is why it is not implemented as a proxy).
+
+<P>When you view the ``access gateway'', you have a form, which allows you
+to type in the URL of some other document on the World Wide Web, for the
+gateway to retrieve.&nbsp; There are also several options that allow you
+to customise what the gateway does to pages.&nbsp; To get to most of them,
+you need to press one of the buttons under the URL box; this arrangement
+is to keep the main form simple.
+
+<P>You do not have to set any of the options at this point; if for any
+reason you are not happy with them at some later point, or if you would
+like to jump to a different page on the World Wide Web that is not in any
+of the links, then you may return to the form later.&nbsp; This is done
+by following a link at the top of whatever page is being displayed, called
+``Change access options''.&nbsp; When you do this, the options will be as
+you left them previously, except that the page's URL will be changed to
+whatever page you were just viewing, if it were different from the one
+that you had entered previously (because you had followed a link).
+
+<P>Saving your options: Once you have found your preferred options, you
+can save them on most browsers by either bookmarking the page, or setting
+it as your home or start page.&nbsp; The method of doing this will depend
+on the software that you are using, so please consult the menus, the online
+help, the documentation, or the next person in the computer room.
+
+<P>Note that it is sometimes possible to accidentally leave the access
+gateway by following a link in a document, even though the program modifies
+links so that they ``go through'' the gateway.&nbsp; This can happen, for
+example, if you have enabled Javascript, the document contains a Javascript
+program, and that program causes your Web browser to retrieve a different
+page directly.&nbsp; Normally, this should not happen, although there are
+an increasing number of Javascript programs offering the user a menu of
+documents to retrieve.
+
+<P>In addition, the gateway can only process HTML documents.&nbsp; If you
+retrieve a document that is not HTML, you will get a message about this,
+and a direct link to the document.
+
+<P><A NAME="options_list"></A>What follows are brief explanations of the
+various options on the form.&nbsp; To submit the form, press the ``Get page''
+button.&nbsp; You can read on through the options or you can select a link.
+<BR>&nbsp;<A HREF="#disable-sight-related">Disable all sight-related options</A>
+<BR>&nbsp;<A HREF="#password-button">Password button</A>
+<BR>&nbsp;<A HREF="#characters-button">Characters button</A>
+<BR>&nbsp;<A HREF="#access-button">Access button</A>
+<BR>&nbsp;<A HREF="#colours-button">Colours button</A>
+<BR>&nbsp;<A HREF="#font-size-button">Size button</A>
+<BR>&nbsp;<A HREF="#options-button">Options button</A>
+<BR>&nbsp;<A HREF="#extensions-button">Extensions button</A>
+<BR>&nbsp;
+<H4>
+<A NAME="disable-sight-related"></A>Disable all sight-related
+          options</H4>
+<!-- @@Option: Aesi -->
+If you have no sight problems (ie. you are using the access gateway for
+foreign languages etc), then select this box, which disables all of the
+sight-related options accessible by pressing the ``Access'' button.
+<!-- @@EndOption -->
+&nbsp;You may then omit reading much of this document by clicking <A HREF="#1">here</A>.&nbsp;
+Note: ``Enable scripts'' remains OFF when you select this option, because
+Javascript often includes code to manipulate URLs that is incompatible
+with Web mediators like the access gateway.
+<BR>
+<HR>
+<H4>
+<A NAME="access-button"></A>Options available under the ``Access'' button</H4>
+You can read on through the options or you can select a link.
+
+<BR>Scripts and applets
+<BR>&nbsp;<A HREF="#ab-enable-scripts">Enable scripts</A>
+<BR>&nbsp;<A HREF="#ab-if-scripts-not-enabled-dont-attempt-guess">If scripts not enabled, don't attempt to guess their links either</A>
+<BR>&nbsp;<A HREF="#dont-abbr-urls-when-displaying-links">Don't
+          abbreviate URLs when displaying links</A>
+<BR>&nbsp;<A HREF="#ab-enable-applets">Enable applets</A>
+<BR>&nbsp;<A HREF="#ab-if-applets-not-enabled-dont-attempt-process-their-params-either">If
+applets not enabled, don't attempt to process their parameters either</A>
+<BR>&nbsp;<A HREF="#ab-enable-embedded-media">Enable embedded media</A>
+<BR>&nbsp;<A HREF="#ab-dont-try-to-extract-text-from-flash">Don't try to extract text from Flash</A>
+
+<BR>Frames and tables
+<BR>&nbsp;<A HREF="#ab-leave-frames-as-they-are">Leave frames as they are</A>
+<BR>&nbsp;<A HREF="#ab-if-leaving-frames-make-them-generic">If leaving
+frames, make them generic</A>
+<BR>&nbsp;<A HREF="#ab-leave-tables-as-they-are">Leave tables as they are</A>
+<BR>&nbsp;<A HREF="#ab-if-leaving-tables-make-them-generic">If leaving
+tables, make them generic</A>
+
+<BR>Images
+<BR>&nbsp;<A HREF="#ab-leave-images-in-links-as-images">Leave images in
+links as images</A>
+<BR>&nbsp;<A HREF="#ab-leave-image-maps-as-they-are">Leave image maps as
+they are</A>
+<BR>&nbsp;<A HREF="#ab-repeat-alt-tags-after-images">Repeat ALT tags after
+images</A>
+<BR>&nbsp;<A HREF="#ab-dont-remove-images-from-buttons">Don't remove images
+from buttons</A>
+<BR>&nbsp;<A HREF="#ab-remove-all-images">Remove ALL images</A>
+
+<BR>Style
+<BR>&nbsp;<A HREF="#ab-enable-style">Enable style sheets</A>
+<BR>&nbsp;<A HREF="#ab-use-document-body-attributes">Use document body
+attributes</A>
+<BR>&nbsp;<A HREF="#ab-use-document-font-settings">Use document font settings</A>
+<BR>&nbsp;<A HREF="#ab-dont-change-blinking-text-to-bold">Don't change
+blinking text to bold</A>
+<BR>&nbsp;<A HREF="#ab-dont-change-underlined-text-that-is-not-a-link-to-bold">Don't
+change underlined text that is not a link to bold</A>
+<BR>&nbsp;<A HREF="#ab-dont-change-italic-text-to-bold">Don't change italic
+text to bold</A>
+<BR>&nbsp;<A HREF="#ab-dont-change-marquee-text-into-plain-text">Don't
+change marquee text into plain text</A>
+
+<BR>Screenreader
+<BR>&nbsp;<A HREF="#ab-dont-attempt-to-remove-surplus-spaces-between-characters">Don't
+attempt to remove surplus spaces between characters</A>
+<BR>&nbsp;<A HREF="#ab-dont-move-link-banner-to-bottom">Don't move
+	  link banner to bottom</A>
+<BR>&nbsp;<A HREF="#ab-perform-smiley-substitution">Perform smiley substitution</A>
+<BR>&nbsp;<A HREF="#ab-dont-put-brackets-around-links">Don't put brackets
+around links</A>
+<BR>&nbsp;<A HREF="#ab-dont-add-end-of-web-page">Don't add ``End of web 
+	  page''</A>
+<BR>&nbsp;<A HREF="#ab-enable-delayed-refresh-redirection">Enable delayed
+refresh/redirection</A>
+
+<BR>Miscellaneous
+<BR>&nbsp;<A HREF="#ab-dont-reformat-long-lines">Don't reformat long lines</A>
+<BR>&nbsp;<A HREF="#ab-dont-strip-height-with-percentages">Don't strip 
+		  HEIGHT with percentages</A>
+<BR>&nbsp;<A HREF="#ab-dont-strip-spacer-tags">Don't strip SPACER
+          tags</A>
+<BR>&nbsp;<A HREF="#ab-dont-expand-acronym-tags">Don't expand Acronym
+          tags</A>
+<BR>&nbsp;<A HREF="#ab-promote-headings">Promote headings</A>
+
+<!-- Scripts and applets -->
+<H4>
+<A NAME="ab-enable-scripts"></A>Enable scripts</H4>
+<!-- @@Option: Ae0 -->
+By default, all Javascript programs (and tag attributes beginning ``on'')
+are removed from the page that you are retrieving.&nbsp;
+(``Noscript'' tags are also removed so any relevant messages are displayed.)&nbsp;
+This is because
+some web sites add Javascript to open new browser windows with advertisements
+in them, or something similar, and these present problems for people
+using speech synthesisers or large fonts (some browsers behave very
+unusually when the text is too big to fit in the window size specified
+by the script, and the script often specifies that the window cannot be scrolled
+or resized).
+
+<P>If you really want the gateway to allow Javascript through, switch
+          on this option.&nbsp; Note, however, that the Javascript
+          might manipulate URLs in a way that is incompatible with the
+          gateway.&nbsp; You might be taken out of the gateway, your
+          settings might be overridden, or the
+		  page might not work at all.&nbsp; Use with care.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-if-scripts-not-enabled-dont-attempt-guess"></A>If scripts
+		  not enabled, don't attempt to guess their links either</H4>
+<!-- @@Option: AeA -->
+Normally, if scripts are disabled, then they are searched for anything
+		that might be a URL, in order to cope with pages that use
+		JavaScript as the sole means of navigation (many pages that
+		are created by automatic page-generation software are like
+		this).&nbsp; This option disables that search.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-abbr-urls-when-displaying-links"></A>Don't abbreviate
+        URLs when displaying links</H4>
+<!-- @@Option: AeJ -->
+When the gateway guesses a link from Javascript, or otherwise has to
+        output a link with no text (such as an image with no ALT), it
+        displays the link's URL.&nbsp; By default, the URL is
+        abbreviated.&nbsp; If you want to see the full URLs, select this
+        option; the page is likely to be more cluttered.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-enable-applets"></A>Enable applets</H4>
+<!-- @@Option: Ae4 -->
+By default, the program disables Java and other applets in the page.&nbsp;
+Switch this option on to re-enable them.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-if-applets-not-enabled-dont-attempt-process-their-params-either"></A>If
+applets not enabled, don't attempt to process their parameters either</H4>
+<!-- @@Option: Aep -->
+By default, if applets are not enabled, the program will attempt to find
+meaning in their parameters.&nbsp; If it finds some apparently meaningful
+text, it will output it, and if it finds a URL it will generate a link.&nbsp;
+Selecting this option will disable these attempts.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-enable-embedded-media"></A>Enable embedded media</H4>
+<!-- @@Option: AeL -->
+By default, the gateway will turn any EMBED elements (for
+music, `flash' movies, etc) into links, so that the user is
+in more control over when (or if) they run; this is useful
+if your browser tends to crash when it encounters this
+media.&nbsp; Selecting this option will allow the EMBED elements
+through; it also implies ``Don't try to extract text from Flash'' (below).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-try-to-extract-text-from-flash"></A>Don't try to extract text from Flash</H4>
+<!-- @@Option: AeM -->
+By default, if the gateway is turning EMBED elements (for
+music, `flash' movies, etc) into links, and the link points
+to a .swf (Flash) file, then the gateway will retrieve it
+and try to extract any text and links from it.&nbsp; This is
+because some sites put their main navigation into Flash
+files, and extracting the links from them is the only way to
+navigate the site if you cannot use ShockWave.&nbsp;
+Selecting this option will prevent the gateway from trying
+to interpret Flash files.&nbsp; The ``Enable embedded
+media'' option implies this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+
+<!-- Frames and tables -->
+<H4>
+<A NAME="ab-leave-frames-as-they-are"></A>Leave frames as they are</H4>
+<!-- @@Option: Ae3 -->
+``Frames'' are an arrangement whereby a document can be made up of several
+other documents.&nbsp; They are frequently a problem for blind users using
+speech synthesisers, and also partially sighted users who have set large
+fonts, especially if the page author did not think of this possibility
+while specifying the frame parameters.&nbsp; By default, the program removes
+all frames.&nbsp; Instead, it retrieves the documents that they contain,
+and inserts them into the document, one after another, separated by horizontal
+rules.&nbsp; If you would not like this, then switching this option on
+will cause the program to leave frames as they are.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-if-leaving-frames-make-them-generic"></A>If leaving frames,
+make them generic</H4>
+<!-- @@Option: Aer -->
+This is only effective if ``Leave frames as they are'' is also switched on.&nbsp;
+Some people are able to read frames, but may struggle if they force a particular
+formatting, such as preventing scrolling and resizing.&nbsp; The ``leave
+frames as they are'' option will not affect such formatting, but selecting
+both it and this will cause the formatting to be removed.
+
+<P>You may like to select this but leave the ``Leave frames as they are''
+option off.&nbsp; In this case, frames will be written out, but, should
+you find a frame that really would be easier as a frame, you can switch
+on ``Leave frames as they are'' and the formatting will still be removed.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-leave-tables-as-they-are"></A>Leave tables as they are</H4>
+<!-- @@Option: Ae9 -->
+Tables are often incorrectly read by speech software, especially if they
+are used to format text into multiple columns on the page.&nbsp; What often
+happens is that a line is read from each column in turn.&nbsp; Tables can
+also be a problem to people using large fonts, if the browser cannot get
+the table to fit on the screen.&nbsp; By default, the access gateway simply
+writes out tables into the document, row by row, with colon separators
+between the columns and horizontal lines betwen the rows (although
+	there are some precautions against excessive numbers of horizontal 
+	lines being drawn when a table is there purely for layout
+	purposes).&nbsp; If you would prefer tables to be left as they
+	were, then switch on this option.
+<P>Please note that tables may still be corrupted by the code that
+	  moves link banners to the bottom.&nbsp; If you select this
+	  option, then you might like to consider also selecting
+	  ``don't move link banner to bottom'' below.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-if-leaving-tables-make-them-generic"></A>If leaving tables,
+make them generic</H4>
+<!-- @@Option: Aeg -->
+This is only effective if ``Leave tables as they are'' is also switched on.&nbsp;
+Some people are able to read tables, but may struggle if they force a particular
+formatting, font, colour, or background.&nbsp; The ``leave tables as they
+are'' option will not affect such formatting, but selecting both it and
+this will cause the formatting to be removed.&nbsp; It is still possible
+for tables to be larger than the screen width.
+
+<P>You may like to select this but leave the ``Leave tables as they are''
+option off.&nbsp; In this case, tables will be written out, but, should
+you find a table that really would be easier as a table, you can switch
+on ``Leave tables as they are'' and the formatting will still be removed.
+<!-- @@EndOption -->
+<BR>&nbsp;
+
+<!-- Images -->
+<H4>
+<A NAME="ab-leave-images-in-links-as-images"></A>Leave images in links
+as images</H4>
+<!-- @@Option: Aec -->
+A link can be an image as well as a piece of text.&nbsp; However, blind
+and partially sighted people rarely realise that a given image is a link,
+and could thus miss a link, especially if an entire contents page were
+formed of these.&nbsp; By default, the program replaces images in links
+with their ``alternative'' text.&nbsp; This is text that is hidden in the
+image specification, designed for Web browsers that cannot support
+	images.&nbsp; Unfortunately, some images do not have alternative
+text; the gateway tries to help with these by extrapolating from the
+	linked-to URL, but sometimes even that is not meaningful.
+If you would like to see the images that are in the links, then switch
+on this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-leave-image-maps-as-they-are"></A>Leave image maps as they
+are</H4>
+<!-- @@Option: Aee -->
+By default, the program replaces client-side image maps with text links,
+so that they can be navigated by people who are unable to use the image.&nbsp;
+If you would prefer image maps to be left as they are, then switch on this
+option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-repeat-alt-tags-after-images"></A>Repeat ALT tags after images</H4>
+<!-- @@Option: Aen -->
+Causes all ALT tags to be repeated after images as well as included in
+them.&nbsp; This is useful for some graphical browsers that do not display
+ALT text even when you switch off images, or if you are partially sighted
+and want to see the non-textual images but read the text in your own font.&nbsp;
+The option is not checked by default because it will cause unnecessary
+repetition if you are using a speech synthesiser and an accessible browser.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-remove-images-from-buttons"></A>Don't remove images from
+buttons</H4>
+<!-- @@Option: Aev -->
+By default, the gateway removes all images from form submit buttons that
+it encounters.&nbsp; Some browsers allow buttons to be displayed at any
+size and/or spoken, but not when the button is an image.&nbsp; For this
+reason, the gateway removes these images.&nbsp; Select this if you want
+to see the images on the buttons.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-remove-all-images"></A>Remove ALL images</H4>
+<!-- @@Option: Aez -->
+This option will cause all images to be removed, including their ALT
+		tags.&nbsp; If you want to see the ALT tags, also select
+		``Repeat ALT tags after images'' above.
+<!-- @@EndOption -->
+<BR>&nbsp;
+
+<!-- Style -->
+<H4>
+<A NAME="ab-enable-style"></A>Enable style sheets</H4>
+<!-- @@Option: Aej -->
+By default, anything in a STYLE tag is disabled, and so are LINK, DIV
+        and SPAN
+tags plus any STYLE attributes.&nbsp; Selecting this will enable them again.&nbsp;
+This can allow documents to override your options by using cascading style
+sheets.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-use-document-body-attributes"></A>Use document body attributes
+(background etc)</H4>
+<!-- @@Option: Ae1 -->
+By default, the program will remove any general text and background colour
+that is set, as well as any background image that is set.&nbsp; This means
+that the user may specify their own colours, which are easier to read.&nbsp;
+As well as this, some page authors set a text colour in such a way that
+browsers that are told to ignore the background colour will still pay attention
+to the text colour.&nbsp; If the text colour is the same as the background
+colour, or if there is little difference, then it may be impossible to
+read the page without pasting it into a wordprocessor or doing something
+similar.&nbsp; If you would like to see the document's original colours
+and background images, switch this option on.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-use-document-font-settings"></A>Use document font settings</H4>
+<!-- @@Option: Ae2 -->
+By default, any attempts that the document makes to change the font size,
+type, or colour, are ignored.&nbsp; If you would not like them ignored,
+switch this option on.&nbsp; Note that this does not cover things such
+as bold, italic and underline, which are dealt with separately.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-change-blinking-text-to-bold"></A>Don't change blinking
+text to bold</H4>
+<!-- @@Option: Ae5 -->
+By default, the program changes blinking text into bold text, because blinking
+text can be difficult to read.&nbsp; If you would not like this, switch
+this option on.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-change-underlined-text-that-is-not-a-link-to-bold"></A>Don't
+change underlined text that is not a link to bold</H4>
+<!-- @@Option: Ae6 -->
+By default, the program changes underlined text into bold text, because
+a link to another document is often represented by a combination of underlining
+the text and displaying it in a different colour.&nbsp; If a user is colourblind,
+or if the colour of the text happens to match the user's link colour, then
+underlined text can seem like a link, which can be confusing.&nbsp; If
+you would prefer underlined text left as it is, then switch on this
+        option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-change-italic-text-to-bold"></A>Don't change italic text
+to bold</H4>
+<!-- @@Option: Ae7 -->
+By default, italic text is changed into bold text, because italic text
+can be difficult to read, especially if there is lots of it.&nbsp; If you
+would prefer italic text left as it is, then switch on this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-change-marquee-text-into-plain-text"></A>Don't change
+marquee text into plain text</H4>
+<!-- @@Option: Aea -->
+By default, marquee text, which scrolls horizontally across the screen,
+is changed into plain text, so that the user can read it at their own pace,
+and so that speech software does not get confused.&nbsp; If you would prefer
+to leave marquee text as it is, then turn on this option.&nbsp; Note that
+some pages use Java applets rather than the marquee tag, and this option
+does not affect these.
+<!-- @@EndOption -->
+<BR>&nbsp;
+
+<!-- Screenreader -->
+<H4>
+<A NAME="ab-dont-attempt-to-remove-surplus-spaces-between-characters"></A>Don't
+attempt to remove surplus spaces between characters</H4>
+<!-- @@Option: Aeq -->
+By default, the gateway will look for places where HTML authors have placed
+a space between each character, as in ``i n t r o d u c t i o n''.&nbsp;
+Although this may be considered by some to look good, it can cause word-wrap
+problems with large fonts and causes most speech synthesisers to spell
+everything out.&nbsp; The gateway attempts to remove these spaces.&nbsp;
+However, it requires some guesswork to distinguish between these spaces
+and legitimate single-letter words in any language, and in some unusual
+cases it can go wrong.&nbsp; Selecting this option disables the gateway's
+attempts to remove these spaces.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-move-link-banner-to-bottom"></A>Don't move link
+	  banner to bottom</H4>
+<!-- @@Option: Aex -->
+Web pages are increasingly putting lots of links and advertisements at
+	the top, so it is difficult to get to the actual contents of the
+	page if you have a sight problem.&nbsp; By default, the gateway
+	will try to detect these banners and move
+	them to the bottom.&nbsp;
+		Select this option to suppress this.
+<P>The algorithm used to detect banners is liable to change; from time
+		  to time I
+		  try to improve it.&nbsp; Ideally it should move the
+		  banner and no more than the banner (it should not move the
+		  start of the text to the bottom); it should not interfere
+		  with small, manageable banners and it should not interfere
+		  with genuine index or contents pages.&nbsp; However,
+		  deciding what ``rules of thumb'' to give to a
+		  computer that doesn't understand the content of the page is
+		  not easy to do well.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-perform-smiley-substitution"></A>Perform smiley substitution</H4>
+<!-- @@Option: Aeb -->
+On the Internet in general, it is fairly common for certain sequences of
+punctuation to be used to indicate facial expressions.&nbsp; For example,
+a colon, a hyphen, and a closing parenthesis indicate a grin.&nbsp; This
+is because, in printed form, a colon is like two small solid circles, one
+directly above the other; a hyphen is like a short horizontal line at a
+height about half way between the two circles, and a closing parenthesis
+is like a part of the right hand side of a circle.&nbsp; If you rotate
+the whole thing by a quarter-turn clockwise, you get the two small solid
+circles aligned horizontally rather than vertically, then the short line
+underneath them at approximately their midpoint, now vertical, and then
+the part of a circle, now taken from the bottom of one.&nbsp; With a bit
+of imagination, these look roughly like a pair of eyes, a nose, and a grinning
+mouth.
+
+<P>If you enable this option, the program will replace this idiom with
+the word ``grin'' in parentheses, so that it can be read properly by a speech
+synthesiser.&nbsp; It also replaces numerous other similar idioms.&nbsp;
+However, switching on this option also slows down the program considerably
+for large Web pages, so you should only use it if you need to.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-put-brackets-around-links"></A>Don't put [ ] around links</H4>
+<!-- @@Option: Ae8 -->
+By default, opening and closing square bracket characters are placed around
+all links that don't already have them, to make them more easily
+        distinguishable to blind people using speech
+        synthesisers.&nbsp; If you would prefer links left as they
+        were, then switch on this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-add-end-of-web-page"></A>Don't add ``End of web page.''</H4>
+<!-- @@Option: Aew -->
+This suppresses the addition of the text ``End of web page.'' at the end
+of a page, which can be useful for blind people or to confirm that a page
+is blank (or completely inaccessible even to the gateway).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-enable-delayed-refresh-redirection"></A>Enable delayed refresh/redirection</H4>
+<!-- @@Option: Aek -->
+By default, automatic page refreshes are disabled, and instead some text
+is printed with a link.&nbsp; This is so that users can refresh pages at
+their own speed.&nbsp; Selecting this option will cause the page refreshes
+to be done automatically.&nbsp; However, if the gateway is processing frames,
+then frame refreshes will not be done automatically regardless of the setting
+of this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+
+<!-- Miscellaneous -->
+
+<H4>
+<A NAME="ab-dont-reformat-long-lines"></A>Don't reformat long lines</H4>
+<!-- @@Option: Aeu -->
+Long lines can cause problems for people using large print
+because some browsers format the entire page to the width of
+the longest line, even if it is wider than the screen.&nbsp;
+This causes the page to require excessive horizontal
+scrolling.&nbsp; Some of the causes of long lines are NOBR
+(no line break) tags, non-breaking spaces, and
+excessively-long words (such as URLs).&nbsp; By default, the
+gateway takes measures to reduce this problem while not
+compromising on readability.&nbsp; If you prefer that the gateway
+did not do this, select this option.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-strip-height-with-percentages"></A>Don't strip HEIGHT 
+		  with percentages</H4>
+<!-- @@Option: Aey -->
+Some images that are used in frames are given tags like
+		<TT>HEIGHT="100%"</TT>, to cause them to fill a small
+		frame.&nbsp; When frames are removed, or the page is
+		otherwise reformatted, these images can hinder page display
+		(by, for example, causing one screenful of the page to be
+		completely black), since they are usually not real images but
+		only layout aids.&nbsp; By default, the access gateway removes
+		any <TT>HEIGHT</TT> attribute it finds with a percentage
+		specification in it, in order to resolve this problem.&nbsp;
+		Select this option to suppress this behaviour.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ab-dont-strip-spacer-tags"></A>Don't strip SPACER tags</H4>
+<!-- @@Option: AeF -->
+        SPACER tags are sometimes used for layout, but, when frames and
+        tables are removed, the remaining SPACER tags can result in
+        excessive amounts of space on the page.&nbsp; By default
+        SPACER tags are removed; use this option to stop that.
+<!-- @@EndOption -->
+<BR>
+<H4>
+<A NAME="ab-dont-expand-acronym-tags"></A>Don't expand Acronym tags</H4>
+<!-- @@Option: AeG -->
+HTML 4.0 defines an ``acronym'' tag, which allows an acronym's
+        expansion to be hidden in the HTML.&nbsp; Many browsers do not
+        display these, so the gateway expands them.&nbsp; Use this
+        option to prevent such expansion.
+<!-- @@EndOption -->
+<BR>
+<H4>
+<A NAME="ab-promote-headings"></A>Promote headings that are below...</H4>
+<!-- @@Option: Aem -->
+Some browsers display deeply-nested subheadings (eg. headings six levels
+deep) in a very small font, regardless of the font settings.&nbsp; This
+option allows you to have such headings ``promoted'', ie. raised in level
+to the value you give.&nbsp; By default, all headings below the third level
+deep are raised to that level.&nbsp; In order to keep the nesting information,
+though, a hyphen and a space is prepended to the heading for each level
+of promotion.
+<!-- @@EndOption -->
+<BR><A NAME="1"></A>
+<HR>
+<H3>
+<A NAME="password-button"></A>Password</H3>
+The password options are for pages that require authentication; most pages
+do not, and you can leave these blank unless you know that you will need
+a password.&nbsp; The password is not encrypted in any way when it is sent
+to the gateway, and, if you are very concerned about security, then you
+should not use the gateway.
+<BR>
+<HR>
+<H4>
+<A NAME="options-button"></A>Options available under the ``Options'' button</H4>
+You can read on through the options, or select one of these links:
+
+<BR>Search
+<BR>&nbsp;<A HREF="#ob-del-table-rows">Delete table rows not matching query</A>
+<BR>&nbsp;<A HREF="#ob-treat-as-frames">Treat as frames links that match query</A>
+<BR>Navigation
+<BR>&nbsp;<A HREF="#ob-url-box-at-top-of-document">URL box at top of document</A>
+<BR>&nbsp;<A HREF="#ob-make-url-box-longer">Make URL box longer</A>
+<BR>&nbsp;<A HREF="#ob-no-change-access-options-link">No change access
+options link</A>
+<BR>&nbsp;<A HREF="#ob-no-character-set-controls">No character set controls</A>
+<BR>&nbsp;<A HREF="#ob-dont-show-date-stamp">Don't show date stamp</A>
+<BR>&nbsp;<A HREF="#ob-dont-add-status-line-code-to-links">Don't add
+          status line code to links</A>
+<BR>Browser quirks
+<BR>&nbsp;<A HREF="#ob-avoid-switching-ssl">Avoid switching to/from SSL</A>
+<BR>&nbsp;<A HREF="#ob-replace-audio-embed-with-bgsound">Replace audio EMBED with BGSOUND</A>
+<BR>&nbsp;<A HREF="#ob-fix-netscape-font-link-bug">Fix Netscape 4.0 font/link
+bug</A>
+<BR>Cookies
+<BR>&nbsp;<A HREF="#ob-use-cookies-for-the-options">Use cookies for
+          the options</A>
+<BR>&nbsp;<A HREF="#ob-dont-store-remote-session-ids">Don't store
+          remote session IDs</A> (only available on some servers)
+<BR>Miscellaneous
+<BR>&nbsp;<A HREF="#ob-replace-paragraphs-with-indentation">Replace paragraphs
+with indentation</A>
+<BR>&nbsp;<A HREF="#ob-word-wrap">Make all text areas word wrap</A>
+<BR>&nbsp;<A HREF="#ob-remove-head">Remove document head</A>
+<BR>&nbsp;<A HREF="#ob-make-reset-buttons-say-reset">Make reset buttons
+say reset</A>
+<BR>&nbsp;<A HREF="#ob-show-hidden-form-fields">Show hidden form fields</A>
+<BR>&nbsp;<A HREF="#ob-remove-alt-tags">Remove ALT tags (for non-readers)</A>
+<BR>&nbsp;<A HREF="#ob-replace-windows-quotes">Replace Windows quotes etc</A>
+<H4>
+<A NAME="ob-del-table-rows"></A>Delete table rows not matching query</H4>
+<!-- @@Option: Att -->
+Typing a query here causes all table rows not matching that query
+to be deleted.&nbsp; This can be useful for those pages that present large
+amounts of information in a tabular form.
+<P>A query is either
+a list of words separated by spaces (in which case all of the words
+must be present for the query to match), or a set of alternative
+lists separated by commas.&nbsp; For example, ``research groups,
+PhD'' will match text containing both ``research'' and ``groups'', and
+also text containing ``PhD''.&nbsp; Case does not matter.&nbsp; Note
+that queries do not remain in effect when you follow links.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-treat-as-frames"></A>Treat as frames links matching query</H4>
+<!-- @@Option: Alf -->
+Typing a query here causes all links whose text matches the query
+to be treated as though they were frames, and the documents that
+they link to will be expanded into the document.&nbsp; This
+implies that frame processing will be turned on, ie. frames will
+be expanded into the document, even if you have disabled the
+sight-related access options.&nbsp; To avoid excessive crawling,
+there is a depth limit on the number of documents that can be
+retrieved at once (as there is with frames), and no URL will be
+retrieved twice.&nbsp; This option is intended for occasional use
+and offline browsing; you cannot have a query permanently set
+while you browse, as server load must be considered.&nbsp; Note
+that the pages themselves will <B>not</B> be retrieved and searched;
+only the text within the link (ie. between the &lt;A> and the &lt;/A>)
+will be searched.
+<P>A query is either
+a list of words separated by spaces (in which case all of the words
+must be present for the query to match), or a set of alternative
+lists separated by commas.&nbsp; For example, ``research groups,
+PhD'' will match text containing both ``research'' and ``groups'', and
+also text containing ``PhD''.&nbsp; Case does not matter.&nbsp; Note
+that queries do not remain in effect when you follow links.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-url-box-at-top-of-document"></A>URL box at top of document</H4>
+<!-- @@Option: Aesu -->
+Selecting this option causes an input box to appear before the ``change
+access options'' link on each page, containing the page's URL.&nbsp; Changing
+this URL and pressing Enter will retrieve the new page (using the current
+options, of course).&nbsp; Please note that some old browsers have trouble
+with form submission if there is more than one form on a page.&nbsp; If
+you are using such a browser, then you may find that pages with forms are
+unusable with this option on; in this case, follow the ``Change access options''
+link and switch it off.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-make-url-box-longer"></A>Make URL box longer</H4>
+<!-- @@Option: AesU -->
+This causes the URL box to be longer.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-no-change-access-options-link"></A>No ``change access options''
+link</H4>
+<!-- @@Option: Aeso -->
+This will suppress the display of the ``change access options'' link at the
+top of pages.&nbsp; Please be careful that you know what you are doing
+when you select this, since it will prevent you from changing the options
+in future (unless you manually edit the CGI parameters to get them back).&nbsp;
+Its normal use is when you know that a certain group of people using the
+gateway are likely to always want the same options and don't want to worry
+about setting them.&nbsp; See also ``Don't show date stamp'' (below).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-no-character-set-controls"></A>No character set controls</H4>
+<!-- @@Option: Aesc -->
+When displaying characters from other languages, the gateway normally inserts a small control that shows which character set it has detected and allows you to override this.&nbsp; This option will suppress that control.&nbsp;
+Please be careful that you know what you are doing
+when you select this, since it will prevent you from changing the character set (unless you manually edit the CGI parameters).&nbsp;
+It might be useful when you want to print out a page.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-dont-show-date-stamp"></A>Don't show date stamp</H4>
+<!-- @@Option: Ael -->
+By default, the page's ``Last-Modified'' date is added at the top (when it
+is available); this option will remove it.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-dont-add-status-line-code-to-links"></A>Don't add status
+          line code to links</H4>
+<!-- @@Option: AeD -->
+Many graphical browsers show the URL of a link in the status line,
+        when the mouse is placed over that link.&nbsp; This is not
+        usually helpful with gateway URLs, so by default the gateway
+        outputs Javascript that makes the status line indicate the URL
+        that the gateway would retrieve, rather than
+        the full gateway query.&nbsp; However, in a document with lots
+        of links, this Javascript can significantly increase the size
+        of the document, which is a bad thing for low-bandwidth
+        devices such as PDAs and Internet mobile phones (which
+        probably don't have status lines anyway).&nbsp; The Javascript
+        can be suppressed by this option.&nbsp; The gateway will try
+        to select this option automatically if your browser does not
+        support Javascript.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-avoid-switching-ssl"></A>Avoid switching to/from SSL</H4>
+<!-- @@Option: Aeas -->
+This option appears on gateways that are capable of
+switching in/out of SSL mode, both server-side and
+client-side.&nbsp; Normally, if the gateway has this
+capability, it will encrypt its connection to your browser
+when (and only when) you are accessing `secure' pages
+(although this behaviour is based on following links from
+within the gateway; if you were to type a URL then your
+browser will use a secure or insecure connection depending
+on what your connection is at the moment).&nbsp; Note that
+this is about the connection to your BROWSER, not the
+connection to the remote site (the gateway's ability to use
+encrypted connections to the remote site is independent of
+its ability to use encrypted connections to your browser).
+<P>
+If your browser does not support SSL (encrypted pages), you
+should check this option if it appears, and note that you
+have to trust your link to the gateway when you are using it
+for secure sites.&nbsp; Also if you are using an SSL gateway
+and you want it to use ONLY encrypted connections to your
+browser (regardless of whether or not the remote site is
+SSL) then you should use this option to stop the gateway
+from switching to non-SSL.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-replace-audio-embed-with-bgsound"></A>Replace audio EMBED with BGSOUND
+(for old versions of Internet Explorer)</H4>
+<!-- @@Option: Aed -->
+If you are running an old version of Internet Explorer and you switch this
+option on, then you should be able to hear background music more
+        often.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-fix-netscape-font-link-bug"></A>Fix Netscape 4.0 font/link bug</H4>
+<!-- @@Option: Aei -->
+Netscape Communicator 4.05 (and possibly some other versions) has a bug
+in that, if a document changes style within a link and fails to change
+back before the end of the link, the rest of the document (or table) will
+look like a link, thus making it very confusing.&nbsp; Many Web authors
+fail to notice this in cases where the end of a table prevents it from
+happening, which means that it will occur when the access gateway removes
+all tables.
+
+<P>It would not be feasible for the access gateway to cope with all possible
+changes of style within a link and re-write the HTML accordingly, since
+some style changes may be introduced after the access gateway has been
+written.&nbsp; Further, future versions of Netscape may correct the problem.&nbsp;
+This box, then, is a ``quick hack''.&nbsp; Selecting it causes the font to
+be reset at the end of every link.&nbsp; A side effect of this is that
+any changes that documents make to the font may be reversed in places.&nbsp;
+This does not matter if you are overriding document fonts anyway.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-remove-head"></A>Remove document head</H4>
+<!-- @@Option: Aef -->
+Some documents have browser-specific HTML in their HEAD sections, causing
+some browsers to refuse to load them (whether or not they are through the
+access gateway).&nbsp; If you come across such a document, try checking
+this option, which removes the HEAD section of the document altogether
+        (although the gateway still adds its own HEAD section).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-use-cookies-for-the-options"></A>Use cookies for the
+          options</H4>
+<!-- @@Option: AeC -->
+The gateway cannot store the options you set on the server.&nbsp;
+        Normally, it adds details of them to every link in every Web
+        page, so that it can use them if you follow that link.&nbsp;
+        This makes some pages unnecessarily large and slow to download
+        on low-bandwidth links.&nbsp; Some browsers
+        support ``cookies'', which allow the gateway to store the
+        options in your browser and have them sent back no matter
+        which link you follow, alleviating the need to add them to
+        every link.&nbsp;
+        However, cookies can be annoying for people who have set their
+        browsers to warn about them, so the gateway will not attempt
+        to use them unless this option is turned on.
+
+<P>If this option is selected, then the gateway will send cookies, but
+          it won't start removing the redundant options from the links
+          until it has confirmed that your browser is returning its
+          cookies.&nbsp; This normally happens on the second page that
+          you fetch, but you might like to check that cookie support
+          is turned on in your browser.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-dont-store-remote-session-ids"></A>Don't store remote
+          session IDs</H4>
+(only available on some servers)<P>
+<!-- @@Option: AeB -->
+Many websites use ``cookies'', which are small amounts of data that
+        are stored by your browser and sent back to the site every
+        time you get a new page.&nbsp; They are usually used to
+        identify your session (like a customer number) so that the
+        site can collect statistics about their visitors.
+<P>Cookies do not work through mediators like the access gateway, but
+          some sites are made in such a way that they don't work
+          without them (and sometimes it's not obvious why they're
+          not working).&nbsp; For this reason, the gateway will store
+          any cookies the site sends as settings in your options, to
+          be sent back to the site.&nbsp; The space for storing
+          cookies is limited; it is not intended to be a full
+          implementation of the cookies standard, only enough to allow
+          you access to sites that refuse entry without cookies.
+<P>If you prefer that the gateway ignores cookies sent by remote
+          sites, use this option.
+<P>In any event, only cookies from documents are stored; cookies from
+          images are dealt with by your browser, since images are
+          fetched directly and not through the gateway.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-replace-paragraphs-with-indentation"></A>Replace paragraphs
+with indentation</H4>
+<!-- @@Option: Aeo -->
+Causes all paragraph breaks to be replaced with line breaks followed by
+indentation.&nbsp; Some people prefer this to the blank line that is left
+by most browsers.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-word-wrap"></A>Make all text areas word wrap</H4>
+<!-- @@Option: Aes -->
+This causes the gateway to add the WRAP=HARD attribute to any TEXTAREA
+tag it finds (replacing any previous WRAP attribute).&nbsp; This means
+that text will automatically wrap as you type into text areas on forms,
+even if the form designer did not intend this.&nbsp; Some people prefer
+this.&nbsp; Use this option with care as some forms will require unwrapped
+text (eg. if you have to paste code into the box).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-make-reset-buttons-say-reset"></A>Make reset buttons say ``Reset''</H4>
+<!-- @@Option: Aeh -->
+Documents are sometimes very unclear about what the buttons on their forms
+actually do.&nbsp; Enabling this option causes any reset buttons to say
+``Reset'', rather than whatever was in the document.&nbsp; Submit buttons
+are not changed because they can sometimes carry extra information that
+would be lost, but knowing which button is Reset is sometimes helpful.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-show-hidden-form-fields"></A>Show hidden form fields</H4>
+<!-- @@Option: AeH -->
+This causes any HIDDEN inputs in forms the server sends to be
+        converted into TEXT inputs, so that you can modify them.&nbsp;
+        Sometimes useful when you want to access servers that don't
+        let you in without Javascript (since they sometimes implement
+        the test by getting the Javascript to change the value of a
+        hidden form option).
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-remove-alt-tags"></A>Remove ALT tags (for non-readers)</H4>
+<!-- @@Option: Aet -->
+Non-readers will probably not be reading this, but their instructors might.&nbsp;
+ALT tags have a tendency to pop up on recent browsers, and this can be
+distracting.&nbsp; This option will remove all ALT tags.&nbsp; Note: Make
+sure ``Disable all sight-related options'' is also set when you set this.
+<!-- @@EndOption -->
+<BR>&nbsp;
+<H4>
+<A NAME="ob-replace-windows-quotes"></A>Replace Windows quotes etc</H4>
+<!-- @@Option: AeK -->
+The Windows-1252 character set adds some extra characters
+        to ISO-Latin-1, such as `smart' quotes.&nbsp; These
+        are not often displayed on non-Microsoft
+        systems.&nbsp; Selecting this option will cause the
+        gateway to substitute other characters for some of
+        them.&nbsp; It is only effective in languages
+        covered by Latin-1.
+<!-- @@EndOption -->
+
+<HR>
+
+<H4>
+<A NAME="colours-button"></A>Colours</H4>
+These options allow you to change the colour scheme of a page.&nbsp; They
+may not work if you have specified that the document's own colours should
+not be ignored (or you have disabled all sight-related options).&nbsp;
+``Use browser setting'' is the default in all cases.&nbsp; If you are an
+expert in HTML programming, then you can modify the RGB values directly
+by changing the CGI in the request to any values that you like.&nbsp; However,
+it would be impractical to put nearly 17 million colour options on the
+form, especially given that some browsers display only a limited number
+of them.&nbsp; Therefore, only a few options are available.
+<BR>
+<HR>
+<H4>
+<A NAME="font-size-button"></A>Font size</H4>
+This allows you to change the size of text displayed on pages.&nbsp; If
+you have told the program not to ignore the document's own fonts (or have
+disabled all sight-related options), then these may override any size that
+you specify here.&nbsp; The default is to use whatever size your browser
+is configured to use.&nbsp; Only text is affected, not images or text in
+images.
+
+<P>Some browsers (notably NCSA Mosaic) do not support different font sizes,
+but do display their headings larger.&nbsp; If you are stuck with one of
+those then you can choose one of the headings instead of a font size.&nbsp;
+However, due to a limitation in HTML, this has side-effects, notably the
+addition of many line breaks (especially if you have the ``fix Netscape
+font/link bug'' option turned on, which you probably don't need if you don't
+have Netscape).
+<BR>
+<HR>
+<H4>
+<A NAME="extensions-button"></A>Extensions</H4>
+If this button is present, then it allows you to enable any third-party
+extensions that may have been added to the copy of the gateway on this
+server.
+<BR>
+<HR>
+<H3>
+<A NAME="characters-button"></A>Other Languages and Encodings</H3>
+If you see nonsense characters when you try to view Web pages written in
+a different alphabet (or with ideographic characters), and you cannot configure
+your browser, then you may find the conversion facility useful.&nbsp; Here
+is a simple explanation of the problem:
+
+<P>Computers work in numbers, and a Web page is really lots of numbers.&nbsp;
+Every letter of the English alphabet has a number, and your browser knows
+which English letter or symbol to display for each number.&nbsp; Other
+alphabets also have numbers, and things like Chinese characters have big
+numbers because there are lots of them.&nbsp; The big numbers have to be
+split into smaller numbers, because each number has to fit in a small space.&nbsp;
+Numbers for other alphabets and for Chinese characters are often the same
+numbers as the ones that are used by English, so, if the computer is programmed
+to display English, then pages in other languages might look like random
+English letters and symbols.
+
+<P>Even if the computer is programmed to display another language, it can
+still go wrong sometimes.&nbsp; This is because some languages have several
+different ways of numbering the letters, or different ways of splitting
+the big numbers into smaller ones, and if your computer is programmed to
+use one or more of these ways then you can still get pages that are written
+in other ways.
+
+<P>This program can read pages that are written in one of these ways, and
+give them to your computer as pictures.&nbsp; Pages are not normally written
+in this way, partly because it takes more time and computer memory.&nbsp;
+The gateway can also be asked to give the characters to your computer
+          in other encodings (such as UTF-8); this is quicker than
+          pictures but is not supported by all browsers.
+
+<P>You normally only need to tell the program which language the page is
+in.&nbsp; The languages in the drop-down boxes are sorted alphabetically
+by their English names, and you can get near a language by pressing its
+first letter on most browsers.&nbsp; The program will detect between the
+various types of encodings appropriate to the language, and I hope to improve
+this detection code in future.&nbsp; If you want to override the detection
+to a particular encoding, then you can do this by pressing ``Override'' after
+getting the page.
+
+<P>
+<!-- @@Option: Aelh -->
+If you have some experience in converting between encodings, then you
+may be concerned about documents that encode high bytes as HTML
+          numerical ampersand
+sequences.&nbsp; This program should cope with them automatically.&nbsp;
+If for some reason you do not want this to happen, select the ``Don't decode
+HTML escapes before interpreting characters'' box.
+<!-- @@EndOption -->
+<P>
+<!-- @@Option: Aels -->
+Normally the gateway will try to detect the character set
+          being used by the text, independently of what the
+          Web server says it is, since many Web
+          servers are configured to give wrong
+          information.&nbsp; However, the gateway does
+          process certain ``charset'' headers, if they
+          are appropriate to the language being
+          displayed.&nbsp; Select the ``Always ignore
+          `charset' headers'' box if you would prefer the
+          gateway to always ignore these headers.
+<!-- @@EndOption -->
+
+<P>The ``Images (ask browser to enlarge)'' option, if present, will
+		  cause the <TT>HEIGHT</TT> and <TT>WIDTH</TT> tags to be
+		  doubled in value.&nbsp; On some web browsers (including
+		  recent versions of Netscape and Internet Explorer), this
+		  causes the characters to be doubled in size.
+
+<P>
+<!-- @@Option: Aeuu -->
+The ``alternative base URL for images'' box is mainly for situations
+	  where more than one image server is available.&nbsp; It is
+	  normally set to a sensible default by the webmaster on the
+	  language entry form, and can be left alone unless you really
+	  know what you're doing.
+<!-- @@EndOption -->
+
+<P>Note: The access gateway program is written in such a way that it can
+be run on different web servers.&nbsp; Some webmasters may decide not to
+include the encoding options, or not to include the images, to save space.&nbsp;
+If you find that these options are not available, then that is the explanation.
+<BR>
+<HR>
+<H3><A NAME="common_problems"></A>Common Problems</H3>
+<OL><LI><B>The web server tells me to go away and come back with a
+		  Version 4 browser or cookies.</B>
+<BR>This should not normally happen, since the access gateway pretends 
+		to be a Version 4 browser and emulates cookies if it
+            can.&nbsp; However, some
+		installations have a dated version of Lynx (the program the
+		gateway uses to get the web pages), and versions of Lynx
+		before 2.8 do not allow browser fakery.&nbsp; Try a different
+		installation if possible.
+</LI><LI><B>When I try to view a language, all the characters come out
+			  as squares.</B>
+<BR>Check that the language is supported by the image server you are
+		using.&nbsp; Check that nobody has set a wrong URL under the
+		Characters button (try deleting any URL there).
+</LI><LI><B>Some of the gateways are out of date</B>
+<BR>Badger their webmasters.&nbsp; I have no control over the ones
+		that are out of date, although I do plea that they keep in
+		step.
+</LI><LI><B>Why do I always get Japanese-style characters while I am
+              not Japanese?</B>
+<BR>Some Traditional or Simplified Chinese characters, and some Korean
+            characters, use the same unicode 
+		codepoints as Japanese.&nbsp; The gateway should use the
+		appropriate versions for Chinese and Korean pages, but if the
+            correct versions are not available on the server you are
+            using then the gateway might attempt to use the Japanese
+            versions instead.&nbsp; If this proves too difficult to
+            read, try using a different server.
+</LI><LI><B>The language options are not available</B>
+<BR>This is because not all servers have installed them.&nbsp; Some
+		webmasters are concerned about the load on their servers.
+</LI><LI><B>The gateway still doesn't make the page accessible.</B>
+<BR>Perhaps it relies on images a lot, which contain textual
+		information and do not have ALT tags, or perhaps it relies on
+            plug-ins.&nbsp; There is little I
+		can do about that short of OCR.&nbsp; Write to the webmaster.
+</LI></OL>
+</BODY>
+</HTML>
