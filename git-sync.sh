@@ -1,5 +1,5 @@
 #!/bin/bash
-git pull
+git pull --no-edit
 wget -N http://people.ds.cam.ac.uk/ssb22/access/access.tar.gz
 tar -zxvf access.tar.gz
 tar -zxvf imgserver.tar.gz
