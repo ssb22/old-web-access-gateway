@@ -3,55 +3,23 @@
 #  Access Gateway - a mediator for the World Wide Web -
 #  "quick" install script for POSIX-compliant Unix systems
 
-#  (C) 1998-2006 Silas S. Brown (University of Cambridge Computer Laboratory)
+# (C) 1998-2006 Silas S. Brown http://ssb22.user.srcf.net
 
-#   This program is free software; you can redistribute it
-#   and/or modify it under the terms of the GNU General
-#   Public License as published by the Free Software
-#   Foundation; either version 2 of the License, or (at your
-#   option) any later version.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
 
-#   This program is distributed in the hope that it will be
-#   useful, but WITHOUT ANY WARRANTY; without even the
-#   implied warranty of MERCHANTABILITY or FITNESS FOR A
-#   PARTICULAR PURPOSE.  See the GNU General Public License
-#   for more details.
+#     http://www.apache.org/licenses/LICENSE-2.0
 
-#   You should have received a copy of the GNU General
-#   Public License along with this program; see the file
-#   COPYING.  If not, write to the Free Software Foundation,
-#   Inc., 59 Temple Place - Suite 330, Boston, MA
-#   02111-1307, USA.
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 # ######################################################
 
-# Check license
-clear
-echo '  Access Gateway - a mediator for the World Wide Web -'
-echo '  "quick" install script for POSIX-compliant Unix systems'
-echo "  (C) 1998-2006 Silas S. Brown (University of Cambridge Computer Laboratory)"
-echo
-echo '   This program is free software; you can redistribute it'
-echo '   and/or modify it under the terms of the GNU General'
-echo '   Public License as published by the Free Software'
-echo '   Foundation; either version 2 of the License, or (at your'
-echo '   option) any later version.'
-echo
-echo '   This program is distributed in the hope that it will be'
-echo '   useful, but WITHOUT ANY WARRANTY; without even the'
-echo '   implied warranty of MERCHANTABILITY or FITNESS FOR A'
-echo '   PARTICULAR PURPOSE.  See the GNU General Public License'
-echo '   for more details.'
-echo
-echo 'Do you accept these terms?  Please type y or n and press Return.'
-read Response
-if ! test "a$Response" = ay; then
-  echo "Response not y - aborting."
-  exit 1
-fi
-
-export SSB_Email=silas@accu.org
-export DefaultImgServer=nexus.csse.monash.edu.au:7080
+export SSB_Email=ssb22@cam.ac.uk
 
 # Check for dependencies
 if ! which lynx >/dev/null; then
@@ -189,12 +157,9 @@ if ! test "a$ImgServerYN" = an; then
   echo "What port number do you want to use for the image server?  (Default 7080)"
   read ImagePort
   if test "a$ImagePort" = a; then export ImagePort=7080; fi
-  export DefaultImgServer="http://$DomainOnly:$ImagePort/"
 else
-  echo "Which image server would you like to use?  Please specify host and port.  The default is $DefaultImgServer"
+  echo "Which image server would you like to use?  Please specify host and port."
   unset ImgServer; read ImgServer
-  if test "a$ImgServer" = a; then export ImgServer=$DefaultImgServer; fi
-  export DefaultImgServer=http://$ImgServer/
 fi
 echo "What is your email address? (You can leave this blank if you want)"
 read AdminEmail
@@ -274,7 +239,7 @@ echo \#define TBL_SUBDIR \"$CgiData/\" >> platform.h
 echo \#define ENCODINGS_AVAILABLE >> platform.h
 echo \#define ENCODINGS_VISIBLE >> platform.h
 echo \#include \"images.h\" >> platform.h
-echo \#define UNICODE_URL \"$DefaultImgServer\" >> platform.h
+echo \#define UNICODE_URL \"$ImgServer\" >> platform.h
 echo \#define UNICODE_EXTENSION \".gif\" >> platform.h
 echo \#define UNICODE_EXTRA_HTML \"BORDER=0\" >> platform.h
 echo \#define UNICODE_HEIGHT 18 >> platform.h
@@ -311,7 +276,7 @@ fi
 # Print the URL
 if ! test "a$ImgServerYN" = an; then
   echo "You can get statistics about your image server from"
-  echo $DefaultImgServer
+  echo $ImgServer
 fi
 echo "You can test your installation by going to"
 echo http://$DomainName/$CgiOutside/$CgiName
