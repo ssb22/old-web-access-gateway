@@ -195,7 +195,7 @@ if ! test "a$ImgServerYN" = an; then
   echo "gzip -d ../imgserver.tar.gz 2>&1 >/dev/null" >> $ImgUpdateScript
   echo "tar -xf ../imgserver.tar || exit 1" >> $ImgUpdateScript
   echo "rm -f ../imgserver.tar" >> $ImgUpdateScript
-  echo "g++ server.c++ -oimgserver -O2 -DData_File_Pathname=\\\"imgserver.dat\\\" -DNOLOG -D_ISOC99_SOURCE $HandleExceptions || exit 1" >> $ImgUpdateScript
+  echo "g++ server.c++ -oimgserver -O2 -DData_File_Pathname=\\\"imgserver.dat\\\" -DNOLOG $HandleExceptions || exit 1" >> $ImgUpdateScript
   # echo "rm -f server.c++" >> $$ImgUpdateScript
   echo "if test a\$1 = a; then echo \"(Re)starting image server...\"; fi" >> $ImgUpdateScript
   echo "$KillAll imgserver 2>/dev/null >/dev/null ; ulimit -n 1024 ; ./imgserver $ImagePort 2>/dev/null >/dev/null &" >> $ImgUpdateScript

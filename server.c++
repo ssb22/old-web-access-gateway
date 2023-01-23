@@ -1,7 +1,7 @@
 // (setq fill-column (- (window-width) 1))
 
 // Compile with -DData_File_Pathname=\"whatever\"
-// also maybe -DSYSLOG or -DNOLOG, maybe -D_ISOC99_SOURCE
+// also maybe -DSYSLOG or -DNOLOG
 // and maybe -DDEBUG_VERSION
 // and maybe -DPrint_All_Incoming_Data
 
@@ -556,9 +556,7 @@ int writeStats(int sock) {
 "<LI>%d connections dropped due to `send' errors\n"
 "<LI>%d `accept' failures\n"
 "<LI>%d FD_SETSIZE errors"
-#if defined _ISOC9X_SOURCE || defined _ISOC99_SOURCE
 "<LI>Last error: %s"
-#endif
 "<LI>%d hits for this page</UL>\n"
 "<LI>%d `not found' errors</UL>",
           theStats.connectionsReceived,
@@ -568,9 +566,7 @@ int writeStats(int sock) {
           theStats.writeErrors,
           theStats.acceptFailures,
           theStats.greaterThanSetsize,
-#if defined _ISOC9X_SOURCE || defined _ISOC99_SOURCE
           strerror(errno),
-#endif
           theStats.indexCounter,
           theStats.err404);
   if(myWrite(sock,buffer)) return -1;
@@ -650,7 +646,7 @@ int handleRequest(int sock) {
           // A 404
           LogWarning("Error 404 on URL \"%." QuotedNameLen "s\"",pr->getRequestedURLNoNull()); // (must do before overwriting buffer)
           if(pr->useHeaders()) {
-            sprintf(buffer,"HTTP/" HTTP_VERSION " 404 Not Found\nConnection: %s\nContent-type: text/plain\nContent-length: %d\n\n",useKeepAlive?"Keep-Alive":"Close",strlen(NotFoundMsg));
+            sprintf(buffer,"HTTP/" HTTP_VERSION " 404 Not Found\nConnection: %s\nContent-type: text/plain\nContent-length: %d\n\n",useKeepAlive?"Keep-Alive":"Close",(int)strlen(NotFoundMsg));
             if(myWrite(sock,buffer)) return -1;
           }
           if(myWrite(sock,NotFoundMsg)) return -1;
@@ -670,7 +666,7 @@ int handleRequest(int sock) {
   }
 }
 
-main(int argc,char* argv[]) {
+int main(int argc,char* argv[]) {
 #ifdef SYSLOG
   // Open system log
   openlog(argv[0],/*LOG_PERROR*/0,LOG_USER);

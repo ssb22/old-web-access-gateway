@@ -145,7 +145,7 @@ request.addString(CRLF PROXY_AUTH_HEADER);
 #endif
 if(hasBody) {
 request.addString(CRLF "Content-type: application/x-www-form-urlencoded" CRLF "Content-length: ");
-char buf[10]; sprintf(buf,"%d",strlen(requestBody));
+char buf[10]; sprintf(buf,"%d",(int)strlen(requestBody));
 request.addString(buf);
 request.addString(CRLF CRLF);
 request.addString(requestBody);

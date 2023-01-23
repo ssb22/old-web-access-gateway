@@ -674,7 +674,7 @@ theEnvironment->h_putchar(':');
 } // (else the page is wrong, but not to worry here)
 y=theTag.getAttribute("VALUE"); if(y && strlen(y)<15) {
 // Make the box smaller (in case there are many of them)
-char buf[10]; sprintf(buf,"%d",strlen(y)+1);
+char buf[10]; sprintf(buf,"%d",(int)strlen(y)+1);
 theTag.addAttribute("SIZE",buf);
 }
 }
