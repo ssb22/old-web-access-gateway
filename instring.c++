@@ -106,7 +106,7 @@ theCurrentLength+=len;
 
 void InString::addString(int number) {
 checkPoint();
-char buf[50]; sprintf(buf,"%d",number);
+char buf[50]; snprintf(buf,sizeof(buf),"%d",number);
 addString(buf);
 }
 

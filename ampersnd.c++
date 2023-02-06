@@ -51,7 +51,7 @@ static char* getStaticUnicodeBuf(unsigned x) {
 // from tecont.c++ but cut-down
 static char buf[10];
 if(!(x&(~0x7F))) { buf[0]=x; buf[1]=0; }
-else sprintf(buf,"&#%d;",x);
+ else snprintf(buf,sizeof(buf),"&#%d;",x);
 return(buf);
 }
 

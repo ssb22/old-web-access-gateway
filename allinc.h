@@ -26,6 +26,7 @@ limitations under the License.
 // put it in some file
 // Also, need to put this HERE (not in include file) for
 // Monash:
+#include <iostream> // to define the namespace
 #ifdef __GNUC__
 #if (__GNUC__ > 2)
 using namespace std;

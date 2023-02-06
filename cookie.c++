@@ -219,7 +219,7 @@ if(query[i]=='=') s.addCharacter('&');
 // hence we know that every odd ampersand has to be
 // converted to = on decode)
 else if(strchr(";, ",query[i])) {
-char buf[5]; sprintf(buf,"%%%02X",(int)((unsigned char)query[i]));
+char buf[5]; snprintf(buf,sizeof(buf),"%%%02X",(int)((unsigned char)query[i]));
 s.addString(buf);
 } else s.addCharacter(query[i]);
 }

@@ -126,7 +126,7 @@ UNIQUEID_PLUS_MORE=UNIQUEID_MAXLEN+30
 
 void outputCheckOption(const char* option,const char* description,CGIEnvironment* theEnvironment);
 
-static int count=0;
+static int wcount=0;
 #ifndef TMP_PREFIX
 #define TMP_PREFIX ""
 #endif
@@ -138,9 +138,9 @@ FILE* getWebPage(const char* url,CGIEnvironment* postDataOrNull,MayReturnNull ma
 checkPoint();
 if(nestLevel>=MAX_NESTING) throw "Redirection nesting too deep, possibly infinitely recursive";
 // Names of temporary files:
-char uniqueID[UNIQUEID_MAXLEN]; sprintf(uniqueID,"%d$%d",getpid(),count++);
-char lynxInFile[UNIQUEID_PLUS_MORE]; sprintf(lynxInFile,TMP_PREFIX "%si.$$$",uniqueID); // %s OK
-char redirFile[UNIQUEID_PLUS_MORE]; sprintf(redirFile,TMP_PREFIX "%so.$$$",uniqueID); // %s OK
+char uniqueID[UNIQUEID_MAXLEN]; snprintf(uniqueID,sizeof(uniqueID),"%d$%d",getpid(),wcount++);
+char lynxInFile[UNIQUEID_PLUS_MORE]; snprintf(lynxInFile,sizeof(lynxInFile),TMP_PREFIX "%si.$$$",uniqueID); // %s OK
+char redirFile[UNIQUEID_PLUS_MORE]; snprintf(redirFile,sizeof(redirFile),TMP_PREFIX "%so.$$$",uniqueID); // %s OK
 // Is there a URL to get?
 const char* idx=NULL;
 int textSubmittedByUser=0,hasMimeHeader=0;
@@ -475,10 +475,10 @@ putenv((char*)"TERM=vt100");
 #endif
 if(proxy()) {
 char buf[BUFLEN+1];
-sprintf(buf,"http_proxy=http://%s:%d",proxy(),proxyPort()); // %s OK (this info is supplied by the sysadmin)
+snprintf(buf,sizeof(buf),"http_proxy=http://%s:%d",proxy(),proxyPort()); // %s OK (this info is supplied by the sysadmin)
 putenv(buf);
 if(proxyFtp()) {
-sprintf(buf,"ftp_proxy=http://%s:%d",proxy(),proxyPort()); // %s OK (this info is supplied by the sysadmin)
+snprintf(buf,sizeof(buf),"ftp_proxy=http://%s:%d",proxy(),proxyPort()); // %s OK (this info is supplied by the sysadmin)
 putenv(buf);
 }
 putenv((char*)"no_proxy="); // in case it was set to something
@@ -748,10 +748,10 @@ void removeTempFiles() {
 #ifndef PRESERVE_TEMP_FILES
 char uniqueID[UNIQUEID_MAXLEN];
 char fileToDelete[UNIQUEID_PLUS_MORE];
-for(int i=0; i<count; i++) {
-sprintf(uniqueID,"%d$%d",getpid(),i);
-sprintf(fileToDelete,TMP_PREFIX "%si.$$$",uniqueID); remove(fileToDelete); // %s OK
-sprintf(fileToDelete,TMP_PREFIX "%so.$$$",uniqueID); remove(fileToDelete); // %s OK
+for(int i=0; i<wcount; i++) {
+snprintf(uniqueID,sizeof(uniqueID),"%d$%d",getpid(),i);
+snprintf(fileToDelete,sizeof(fileToDelete),TMP_PREFIX "%si.$$$",uniqueID); remove(fileToDelete); // %s OK
+snprintf(fileToDelete,sizeof(fileToDelete),TMP_PREFIX "%so.$$$",uniqueID); remove(fileToDelete); // %s OK
 }
 #endif
 }

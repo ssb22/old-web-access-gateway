@@ -1187,7 +1187,7 @@ while (!fAtEnd)
 fAtEnd = ParseShapeRecord(xLast, yLast);
 }
 
-delete piOffsetTable;
+delete[] piOffsetTable;
 }
 
 
@@ -1203,7 +1203,7 @@ pszName[n] = (char)GetByte();
 pszName[n] = '\0';
 
 
-delete pszName;
+delete[] pszName;
 
 U8 flags = (FontFlags)GetByte();
 
@@ -1223,7 +1223,7 @@ fontGlyphMappings[iFontID][n] = piCodeTable[n];
 }
 
 
-delete piCodeTable;
+delete[] piCodeTable;
 }
 
 BOOL CInputScript::ParseTextRecord(int nGlyphBits, int nAdvanceBits)
@@ -1388,7 +1388,7 @@ while (!fAtEnd)
 fAtEnd = ParseShapeRecord(xLast, yLast);
 }
 
-delete puOffsetTable;
+delete[] puOffsetTable;
 
 
 if (m_filePos != iDataPos + iCodeOffset)

@@ -380,7 +380,7 @@ int r=vsnprintf(tempBuf,TB_LEN,format,argptr);
 if(r==-1) throw "CGIEnvironment::h_printf buffer overflow (GNU vsnprintf used)";
 #else
 tempBuf[TB_LEN-1]=0;
-vsprintf(tempBuf,format,argptr);
+ vsnprintf(tempBuf,sizeof(tempBuf),format,argptr);
 if(tempBuf[TB_LEN-1]) throw "CGIEnvironment::h_printf buffer overflow (vsprintf used)";
 #endif
 else whereToOutput->addString(tempBuf);
@@ -714,7 +714,7 @@ if(isOKForQuery(rhs[i])) url.addCharacter(rhs[i]);
 else if(rhs[i]==' ') url.addCharacter('+');
 else {
 char buf[5];
-sprintf(buf,"%%%02X",(int)((unsigned char)rhs[i]));
+snprintf(buf,sizeof(buf),"%%%02X",(int)((unsigned char)rhs[i]));
 url.addString(buf);
 }
 }
@@ -817,7 +817,7 @@ if(isOKForQuery(rhs[j])) str.addCharacter(rhs[j]);
 else if(rhs[j]==' ') str.addCharacter('+');
 else {
 char buf[5];
-sprintf(buf,"%%%02X",(int)((unsigned char)rhs[j]));
+snprintf(buf,sizeof(buf),"%%%02X",(int)((unsigned char)rhs[j]));
 str.addString(buf);
 }
 }

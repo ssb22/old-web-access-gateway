@@ -73,7 +73,7 @@ if(!theHelpFile) throw "Failed to open help file " HELP_FILENAME;
 }
 char line[HELP_BUFLEN+1],inOption=0;
 char lookingFor[HELP_BUFLEN+1];
-sprintf(lookingFor,HELP_OPTION_COMMENT "%s",option); // %s OK (we're providing "option", not the user)
+snprintf(lookingFor,sizeof(lookingFor),HELP_OPTION_COMMENT "%s",option); // %s OK (we're providing "option", not the user)
 int found=0;
 // This is a bit hacky (could be better if we move to
 // FastCGI or something and the object becomes

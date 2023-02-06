@@ -535,7 +535,7 @@ int writeStats(int sock) {
   time_t t=time(NULL);
   struct passwd* p=getpwuid(getuid());
   char buffer[MAXMSG];
-  sprintf(buffer,"<UL><LI>Program version: " UPDATE_DATE"\n"
+  snprintf(buffer,sizeof(buffer),"<UL><LI>Program version: " UPDATE_DATE"\n"
 "<UL><LI>Server time at launch: %s\n"
 "<LI>Server time now: %s\n"
 "<LI>Launched by %s (%s)</UL>\n"
@@ -547,10 +547,10 @@ int writeStats(int sock) {
           niceMultDivision(3600,theStats.imagesServed,t-theStats.launchTimeT));
   if(myWrite(sock,buffer)) return -1;
   for(int i=0; i<theNoOfStyles; i++) {
-    sprintf(buffer,"<LI>%d requested %s style",theStyles[i].counter,theStyles[i].name);
+    snprintf(buffer,sizeof(buffer),"<LI>%d requested %s style",theStyles[i].counter,theStyles[i].name);
     if(myWrite(sock,buffer)) return -1;
   }
-  sprintf(buffer,"</UL><LI>%d connections received (average images served per connection: %d)\n"
+  snprintf(buffer,sizeof(buffer),"</UL><LI>%d connections received (average images served per connection: %d)\n"
 "<UL><LI>%d connections currently open\n"
 "<LI>%d idle connections dropped\n"
 "<LI>%d connections dropped due to `send' errors\n"
@@ -611,7 +611,7 @@ int handleRequest(int sock) {
         int len; const void* data=getData(pr->getRequestedURLNoNull(),pr->getPreferredFontNoNull(),len);
         if(data) {
           if(pr->useHeaders()) {
-            sprintf(buffer,"HTTP/" HTTP_VERSION
+            snprintf(buffer,sizeof(buffer),"HTTP/" HTTP_VERSION
                     " 200 OK\nConnection: %s\n"
                     "Content-type: " ContentType "\n"
                     "Expires: " Expires "\n"
@@ -631,7 +631,7 @@ int handleRequest(int sock) {
           // content-length either)
           theStats.indexCounter++;
           if(pr->useHeaders()) {
-            sprintf(buffer,"HTTP/1.0 200 OK\nContent-type: " BannerType "\n\n");
+            snprintf(buffer,sizeof(buffer),"HTTP/1.0 200 OK\nContent-type: " BannerType "\n\n");
             if(myWrite(sock,buffer)) return -1;
           }
           // (For now, if any write errors, close immediately)
@@ -646,7 +646,7 @@ int handleRequest(int sock) {
           // A 404
           LogWarning("Error 404 on URL \"%." QuotedNameLen "s\"",pr->getRequestedURLNoNull()); // (must do before overwriting buffer)
           if(pr->useHeaders()) {
-            sprintf(buffer,"HTTP/" HTTP_VERSION " 404 Not Found\nConnection: %s\nContent-type: text/plain\nContent-length: %d\n\n",useKeepAlive?"Keep-Alive":"Close",(int)strlen(NotFoundMsg));
+            snprintf(buffer,sizeof(buffer),"HTTP/" HTTP_VERSION " 404 Not Found\nConnection: %s\nContent-type: text/plain\nContent-length: %d\n\n",useKeepAlive?"Keep-Alive":"Close",(int)strlen(NotFoundMsg));
             if(myWrite(sock,buffer)) return -1;
           }
           if(myWrite(sock,NotFoundMsg)) return -1;
