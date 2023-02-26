@@ -184,8 +184,14 @@ void outputHiddenOption(const char* lhs,const char* rhs) {
 // NB This doesn't check the cookie stuff any more
 // selectOptionsToDump does, but if you're calling it
 // in other contexts, be careful
-// Note: Hidden options cannot contain the " character here
-(*this)<<"<INPUT TYPE=hidden NAME=\""<<lhs<<"\" VALUE=\""<<rhs<<"\">\n";
+  (*this)<<"<INPUT TYPE=hidden NAME=\""<<lhs<<"\" VALUE=\"";
+  if(strchr(rhs,'"')) {
+    for(;*rhs;rhs++) switch(*rhs) {
+      case '"': (*this)<<"&quot;"; break;
+      case '&': (*this)<<"&amp;"; break;
+      default: (*this)<<*rhs; }
+  } else (*this)<<rhs;
+  (*this)<<"\">\n";
 }
 InString theOutputData,theHeaderData,theDevNull;
 InString *whereToOutput, *oldWhereToOutput;
