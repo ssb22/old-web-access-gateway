@@ -1,0 +1,9 @@
+# -*- mode: Makefile -*-
+test: # at least check it compiles
+	g++ server.c++ -DData_File_Pathname='"/dev/null"'
+	mkdir -p test
+	cp *.c++ *.h test
+	rm test/server.c++
+	grep -v ^.error platform.h > test/platform.h
+	cd test && g++ *.c++
+.PHONY: test

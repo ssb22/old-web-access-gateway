@@ -86,6 +86,7 @@ void h_fputs(const char* string) { whereToOutput->addString(string); }
 void h_fputs(const char* string,int len) { whereToOutput->addBytes(string,len); }
 void h_printf(const char* format,...);
 CGIEnvironment& operator<<(const char* s) { h_fputs(s); return(*this); }
+CGIEnvironment& operator<<(char c) { h_putchar(c); return(*this); }
 int h_putchar(int c) { whereToOutput->addCharacter(c); return c; }
 
 void outputToMainPage() { whereToOutput=&theOutputData; }
