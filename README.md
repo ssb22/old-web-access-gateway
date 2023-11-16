@@ -59,13 +59,6 @@ You may wish to bookmark the long URL with the `&AP=1`, for when you update the 
 
 Wildcards are also possible (using for).
 
-Mailing list and bugs
----------------------
-
-The access-gateway-users mailing list at ACCU.org has now closed. 
-
-An incomplete [bug list](http://ssb22.user.srcf.net/access/bugs.htm) is available. These bugs will *not* be fixed: I stopped maintaining Web Access Gateway when I started writing stylesheets for low vision and Web Adjuster.
-
 Citation
 --------
 
