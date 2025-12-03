@@ -1,19 +1,18 @@
 # old-web-access-gateway
-Old Web Access Gateway from http://ssb22.user.srcf.net/access
-
-(also mirrored at http://ssb22.gitlab.io/access just in case)
+Old Web Access Gateway from https://ssb22.user.srcf.net/access
+(also [mirrored on GitLab Pages](https://ssb22.gitlab.io/access) just in case)
 
 The Web access gateway (1997-2006) was an online “browser within a browser”, giving you more control over how websites are displayed, regardless of which browser you have to use. The gateway had two main purposes:
 
 1. To make the Web easier to access for print-disabled users (such as users with low vision or dyslexia);
 
-2. To allow speakers of other languages to view Web pages written in them, when the encodings were not supported by their browsers.  This used non-optimal GIFs to work around the GIF patent problem: it came to my attention that both Unisys and IBM obtained patents on the Lempel Ziv Welch (LZW) data compression and decompression algorithm that is used in GIF files.  The language viewer in the access gateway used GIF files for its foreign characters.  Many users relied on this because their browsers were old or limited and could not display the PNG format.  Therefore, I modified the GIF files so that they do not use the Lempel Ziv Welch (LZW) data compression algorithm and did not infringe the patents on that algorithm.  This made the files larger.  The patents should now have expired, but I’m no longer actively maintaining the language viewer images so I have no plans to reverse this change. Web Adjuster has more modern image rendering.  See also my essay on [software patents and mental health](http://ssb22.user.srcf.net/law/).
+2. To allow speakers of other languages to view Web pages written in them, when the encodings were not supported by their browsers.  This used non-optimal GIFs to work around the GIF patent problem: it came to my attention that both Unisys and IBM obtained patents on the Lempel Ziv Welch (LZW) data compression and decompression algorithm that is used in GIF files.  The language viewer in the access gateway used GIF files for its foreign characters.  Many users relied on this because their browsers were old or limited and could not display the PNG format.  Therefore, I modified the GIF files so that they do not use the Lempel Ziv Welch (LZW) data compression algorithm and did not infringe the patents on that algorithm.  This made the files larger.  The patents should now have expired, but I’m no longer actively maintaining the language viewer images so I have no plans to reverse this change. Web Adjuster has more modern image rendering.  See also my essay on [software patents and mental health](patents.md).
 
 Web Access Gateway's support of Javascript is limited and is not suitable for modern “Web application” sites.
 
 * If you have a recent desktop browser, you might be better off using my stylesheets for low vision (although some web applications manage to break even on those).
 
-* If you still need a mediator, my [Web Adjuster](http://ssb22.user.srcf.net/adjuster/) might do what you want (especially if you can run Javascript in the browser; see for example [large-print-websites.appspot.com](http://large-print-websites.appspot.com/) or [cjk-website-renderer.appspot.com](http://cjk-website-renderer.appspot.com/)).
+* If you still need a mediator, my [Web Adjuster](https://ssb22.user.srcf.net/adjuster/) might do what you want (especially if you can run Javascript in the browser; see for example [large-print-websites.appspot.com](http://large-print-websites.appspot.com/) or [cjk-website-renderer.appspot.com](http://cjk-website-renderer.appspot.com/)).
 
 * On the commercial side there’s Openwave Web Adapter—I was on their team for 2 years and the American “Sprint” carrier licensed it to simplify web navigation before ‘smartphones’ became popular. Some “proxy-rendering” “microbrowsers” (Opera Mini, China’s “UC Browser”, etc) also run Javascript on a proxy but only for their browsers. I don’t know if Infogin etc ever got around to full Javascript support.
 
