@@ -7,9 +7,9 @@ from https://ssb22.user.srcf.net/law/
 or, why you should **not** kill yourself for using a computer
 
 Every so often we read news that a “patent troll” has somehow obtained a “trivial patent” that makes it “illegal” to use basic maths that practically all computing depends on. For example:
-* Claim 1 of US patent 5,893,120 arguably meant any computer made since ~1985 shouldn’t have been used between 1997 and 2017;
-* Claim 1 of US patent 7,028,023 B2 arguably means any C++ program that uses std::deque (i.e. many programs from the 1990s onwards) shouldn’t have been used between 2002 and 2022;
-* Claim 1 of US patents 7,047,033 B2 and 7,920,894 arguably meant disabled people with Wi-Fi connections shouldn’t have used some of my web accessibility software between 2000 and 2020 even though I got there first.
+* Claim 1 of US patent 5,893,120 arguably meant any computer made since ~1985 shouldn’t have been used between 1997 and 2017,
+* Claim 1 of US patent 7,028,023 B2 arguably means any C++ program that uses std::deque (i.e. many programs from the 1990s onwards) shouldn’t have been used between 2002 and 2022,
+* and Claim 1 of US patents 7,047,033 B2 and 7,920,894 arguably meant disabled people with Wi-Fi connections shouldn’t have used some of my web accessibility software between 2000 and 2021 even though I got there first.
 
 Being told it’s illegal to use a computer is especially hard-hitting for those who depend on computers to overcome a disability. Believing you are a criminal can produce extremely negative emotions (many religions say crime slaps God himself, and many non-religious people are also affected); guilt feelings can even result in suicide (although they shouldn’t). Perhaps this “reality check” can help:
 
